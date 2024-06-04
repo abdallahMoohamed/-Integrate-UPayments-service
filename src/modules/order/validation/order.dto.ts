@@ -8,7 +8,7 @@ export class CreateOrderDTO {
   user: Types.ObjectId;
 
   @IsNotEmpty()
-  @Matches(/^(01)(0|1|2|5)[0-9]{8}$/)
+  @Matches(/^(01)(0|1|2|5)[0-9]{8}$/,{message:"Please enter valid egyption number"})
   phone: string;
 
   @IsNotEmpty()

@@ -23,6 +23,7 @@ export class OrderService {
   /**
    * @todo Quantity decrease when payment transcation is done
    */
+  
   async createOrder (data: CreateOrderDTO, auth: any): Promise<any> {
 
     // get cart by userId
@@ -39,7 +40,7 @@ export class OrderService {
     }, 0)
 
     // get all products with details 
-    const idsProducts = cart.products.map((product) => {
+    const idsProducts = cart.products.map((product) => { // pro id
       return product.productId
     })
     const products = await this._productDBService.find({ _id: { $in: idsProducts } })
