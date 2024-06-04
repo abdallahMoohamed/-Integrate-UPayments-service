@@ -19,8 +19,4 @@ export class OrderController {
     }
   }
 
-  @Get('successfully-transaction')
-  successfullyPage(){
-    return 'Successfully Transaction !'
-  }
 }

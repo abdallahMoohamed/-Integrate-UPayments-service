@@ -33,7 +33,7 @@ export class OrderService {
     // check products existance in cart 
     if (!cart.products.length)
       throw new BadRequestException("Cart is empty !")
-    // clac all price for order 
+    // calculate all prices for order 
     const price = cart.products.reduce((accumulator, product) => {
       return accumulator + (product.price * product.quantity)
     }, 0)
@@ -61,7 +61,7 @@ export class OrderService {
     const paymentResponse = await this._paymentService.makeCharge(data, auth)
 
     // return response 
-    return paymentResponse
+    return { paymentResponse, cart, products }
   }
 
 
