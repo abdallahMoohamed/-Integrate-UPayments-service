@@ -51,8 +51,8 @@ export class PaymentService {
 
       // check is transcation done or not 
       return response.data;
-    } catch (error) {
-      throw new HttpException(error.message, 400);
+    } catch (error) {    
+      throw new HttpException(error.message, error.response.status);
     }
   }
 
